@@ -229,10 +229,8 @@ def compare_createobj(orderno,obj_saas,obj_off,reason):
     return result
     pass
 
-# 时间统一格式化
 def formate_time(value):
-    """ 时间格式统一为 yyyy-MM-dd
-
+    """ 时间统一格式化 yyyy-MM-dd
     :param value:从excel读取的时间字符串
     :return 格式化的字符串,如果输入为空则返回空
     :rtype str
@@ -241,12 +239,10 @@ def formate_time(value):
     try:
         if not value:
             return ''
-        if value.find('-')>0:
-            temp = time.strptime(value, '%Y-%m-%d %H:%M:%S')
-            return time.strftime('%Y-%m-%d', temp)
-        else:
-            temp=time.strptime(value,'%Y/%m/%d %H:%M:%S')
-            return time.strftime('%Y-%m-%d',temp)
+        t_year = value[0:4]
+        t_month = value[5:2]
+        t_day = value[8:2]
+        return '{}-{}-{}'.format(t_year, t_month, t_day, )
         pass
     except:
         return ''

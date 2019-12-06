@@ -1,16 +1,21 @@
+import sys
 import xlwt
 import xlrd
 import time
-import sys
 from concurrent.futures import ThreadPoolExecutor
 
-# 执行主方法
-def runCompare(file_path,queue):
+
+def run_compare(file_path, queue):
+    """
+    执行主方法
+    :param file_path: 文件地址
+    :param queue: 队列对象
+    :return:
+    """
     queue.put('开始读取excel文件...')
 
     try:
         workbook = xlrd.open_workbook(file_path)
-
         excel_saas = []
         excel_pay = []
 
@@ -92,34 +97,58 @@ def runCompare(file_path,queue):
 
     pass
 
-# 数据对比
-def data_compare(mainlist, comparelist, compare_type):
-    temp = list(map(lambda item: compare_main(item, list(comparelist), compare_type), list(mainlist)))
+
+def data_compare(main_list, compare_list, compare_type):
+    """
+    数据对比方法
+    :param main_list: 主比对文件
+    :param compare_list: 去对比的文件
+    :param compare_type: 对比类型
+    :return:
+    """
+    temp = list(map(lambda item: compare_main(item, list(compare_list), compare_type), list(main_list)))
     return list(filter(lambda item: item != None, temp))
     pass
 
-# 读取Excel信息
-def data_excel_read(sheet,objName):
-    obj=getattr(sys.modules[__name__], objName)
+
+def data_excel_read(sheet, obj_name):
+    """
+    读取Excel信息
+    :param sheet: 要读取的excel表单
+    :param obj_name: 赋值的对象名称
+    :return:
+    """
+    obj = getattr(sys.modules[__name__], obj_name)
     return [obj(sheet.row_values(i)) for i in range(sheet.nrows)]
 
-# 读取完Excel回调
-def data_excel_read_rollback(listdata):
-    return list(filter(lambda item: not item.istitle, listdata))
+
+def data_excel_read_rollback(list_data):
+    """
+    读取完Excel回调
+    :param list_data: 读取到的数据列表
+    :return:
+    """
+    return list(filter(lambda item: not item.istitle, list_data))
     pass
 
-# 解析 Excel信息
-def data_excel_analysis(listdata,listtype):
+
+def data_excel_analysis(list_data, list_type):
+    """
+    解析Excel的列表信息
+    :param list_data: 列表数据
+    :param list_type: 解析类型
+    :return:
+    """
     result_list = []
-    for item in listdata:
-        templist = list(filter(lambda temp: temp.orderno == item.orderno, listdata))
+    for item in list_data:
+        templist = list(filter(lambda temp: temp.orderno == item.orderno, list_data))
 
         if len(templist) <= 1:
-            result_list.append(data_formate_detail_saas(item) if listtype==1 else data_formate_detail_pay(item))
+            result_list.append(data_formate_detail_saas(item) if list_type==1 else data_formate_detail_pay(item))
             pass
         else:
 
-            result_temp=map(lambda temp:(data_formate_detail_saas(temp) if listtype==1 else data_formate_detail_pay(temp)),templist)
+            result_temp=map(lambda temp:(data_formate_detail_saas(temp) if list_type==1 else data_formate_detail_pay(temp)),templist)
             result_temp = list(result_temp)
 
             obj_pay=list(filter(lambda k:k.status=='pay',result_temp))[0]
@@ -140,10 +169,17 @@ def data_excel_analysis(listdata,listtype):
     return list(filter(lambda item: item != None, result_list))
     pass
 
-# 写入数据到excel
-def data_excel_write(listData,queue,file_path):
+
+def data_excel_write(list_data,queue,file_path):
+    """
+    写入数据到excel
+    :param list_data:
+    :param queue:
+    :param file_path:
+    :return:
+    """
     result_data=[]
-    for item in listData:
+    for item in list_data:
         temp = list(filter(lambda x: x.orderno == item.orderno, result_data))
         if len(temp) == 0:
             result_data.append(item)
@@ -212,8 +248,13 @@ def data_excel_write(listData,queue,file_path):
     queue.put('结果文件地址：'+fullPath)
     pass
 
-# 执行对比的实体格式化 平台
+
 def data_formate_detail_saas(obj):
+    """
+    执行对比的实体格式化 平台
+    :param obj:对象
+    :return:
+    """
     resultObj = DataDetail()
     resultObj.orderno = obj.orderno
     resultObj.payno = obj.payno
@@ -345,10 +386,9 @@ def compare_createobj(orderno,payno,obj_saas,obj_pay,reason):
     return result
     pass
 
-# 时间统一格式化
-def formate_time(value):
-    """ 时间格式统一为 yyyy-MM-dd
 
+def formate_time(value):
+    """ 时间统一格式化 yyyy-MM-dd
     :param value:从excel读取的时间字符串
     :return 格式化的字符串,如果输入为空则返回空
     :rtype str
@@ -357,12 +397,10 @@ def formate_time(value):
     try:
         if not value:
             return ''
-        if value.find('-')>0:
-            temp = time.strptime(value, '%Y-%m-%d %H:%M:%S')
-            return time.strftime('%Y-%m-%d', temp)
-        else:
-            temp=time.strptime(value,'%Y/%m/%d %H:%M:%S')
-            return time.strftime('%Y-%m-%d',temp)
+        t_year = value[0:4]
+        t_month = value[5:2]
+        t_day = value[8:2]
+        return '{}-{}-{}'.format(t_year, t_month, t_day)
         pass
     except:
         return ''

@@ -39,15 +39,14 @@ class App(tk.Tk):
         tk.Tk.__init__(self)
         self.queue = Queue()
         self.module_list = COMPARE_MODULE
-        self.compare_file='',
-        self.compare_module='pay_paysys'
+        self.compare_file = '',
+        self.compare_module = 'pay_paysys'
         self.module_init()
         self.file_init()
         self.lstbox_init()
-
         pass
 
-    def checkqueue(self):
+    def check_queue(self):
         """
         读取队列中正在执行的方法返回的信息,并打印在listbox中
         :return:None
@@ -58,13 +57,23 @@ class App(tk.Tk):
                 self.listbox.insert('end', msg)
             except Queue.Empty:
                 pass
+            pass
+        pass
+
+    def start_que(self):
+        self.check_queue()
+        if self.thread.is_alive() or self.queue.qsize():
+            self.after(100, self.start_que)
+        else:
+            self.button.config(state="active")
+        pass
 
     def modeul_change(self):
         """
         获取单选按钮的值
         :return: None
         """
-        self.compare_module=str(self.radioValue.get())
+        self.compare_module = str(self.radioValue.get())
         pass
 
     def module_init(self):
@@ -135,6 +144,7 @@ class App(tk.Tk):
         对比按钮单击事件:对操作参数进行判断,并调用对应的方法
         :return:
         """
+
         self.listbox.delete(0, self.listbox.size())
         self.button.config(state="disabled")
 
@@ -148,8 +158,9 @@ class App(tk.Tk):
             self.button.config(state="active")
             return
 
-        self.thread = ThreadedClient(self.queue,self.compare_file,self.compare_module)
+        self.thread = ThreadedClient(self.queue, self.compare_file,self.compare_module)
         self.thread.start()
+        self.start_que()
         pass
 
 
@@ -157,7 +168,7 @@ class ThreadedClient(threading.Thread):
     """
     线程执行类
     """
-    def __init__(self, queue,compare_file,compare_module):
+    def __init__(self, queue, compare_file, compare_module):
         """
         类的构造方法
         :param queue:窗体主程序的队列对象
@@ -199,7 +210,7 @@ class ThreadedClient(threading.Thread):
             self.module_func = run_ota_otasys.runCompare
             pass
         else:
-            self.module_func=func_nopass
+            self.module_func = func_nopass
             pass
 
 
@@ -213,7 +224,6 @@ class ThreadedClient(threading.Thread):
         self.queue.put('选择的模式为：%s' %self.compare_module['show'])
         self.queue.put('对比文件地址：%s' %self.compare_file)
         self.module_func(self.compare_file,self.queue)
-        self.queue.put('对比结束,请到结果文件中查看')
         pass
 
 
