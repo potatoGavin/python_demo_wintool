@@ -151,18 +151,22 @@ def data_excel_analysis(list_data, list_type):
             result_temp=map(lambda temp:(data_formate_detail_saas(temp) if list_type==1 else data_formate_detail_pay(temp)),templist)
             result_temp = list(result_temp)
 
-            obj_pay=list(filter(lambda k:k.status=='pay',result_temp))[0]
-            obj_refund = list(filter(lambda k:k.status=='refund',result_temp))[0]
-            obj_result=DataDetail()
-            obj_result.orderno=obj_pay.orderno
-            obj_result.payno = obj_pay.payno
-            obj_result.paytime = obj_pay.paytime
-            obj_result.payamount = obj_pay.payamount
-            obj_result.refundtime = obj_refund.refundtime
-            obj_result.refundamount = obj_refund.refundamount
-            obj_result.status = 'refund'
+            obj_pay = list(filter(lambda k: k.status=='pay',result_temp))
+            obj_refund = list(filter(lambda k: k.status=='refund', result_temp))
 
-            result_list.append(obj_result)
+            if obj_pay and obj_refund:
+                obj_pay=obj_pay[0]
+                obj_refund=obj_refund[0]
+                obj_result = DataDetail()
+                obj_result.orderno=obj_pay.orderno
+                obj_result.payno = obj_pay.payno
+                obj_result.paytime = obj_pay.paytime
+                obj_result.payamount = obj_pay.payamount
+                obj_result.refundtime = obj_refund.refundtime
+                obj_result.refundamount = obj_refund.refundamount
+                obj_result.status = 'refund'
+
+                result_list.append(obj_result)
             pass
         pass
 
@@ -274,8 +278,9 @@ def data_formate_detail_saas(obj):
     resultObj.status = obj.status
     return resultObj
 
-# 执行对比的实体格式化 第三方
+
 def data_formate_detail_pay(obj):
+    """执行对比的实体格式化 第三方"""
     resultObj = DataDetail()
     resultObj.orderno = obj.orderno
     resultObj.payno = obj.payno
@@ -297,8 +302,9 @@ def data_formate_detail_pay(obj):
     return resultObj
     pass
 
-# 对比主方法
+
 def compare_main(obj_this, datalist, atype):
+    """对比主方法"""
     result_obj = None
     obj_will_compare=DataDetail()
     templist=list(filter(lambda item:item.orderno==obj_this.orderno,datalist))
@@ -365,8 +371,9 @@ def compare_main(obj_this, datalist, atype):
 
     pass
 
-# 生成异常信息实体
+
 def compare_createobj(orderno,payno,obj_saas,obj_pay,reason):
+    """生成异常信息实体"""
     result=DataResult()
 
     result.orderno = orderno
@@ -398,16 +405,17 @@ def formate_time(value):
         if not value:
             return ''
         t_year = value[0:4]
-        t_month = value[5:2]
-        t_day = value[8:2]
+        t_month = value[5:7]
+        t_day = value[8:10]
         return '{}-{}-{}'.format(t_year, t_month, t_day)
         pass
     except:
         return ''
     pass
 
-# 平台数据实体
+
 class ExcelSaas(object):
+    """平台数据实体"""
     def __init__(self, rowInfo):
         self.istitle = False
         self.orderno = rowInfo[0]
@@ -424,8 +432,9 @@ class ExcelSaas(object):
     def __str__(self):
         return '平台交易流水号：{},订单号：{}'.format(self.orderno,self.payno)
 
-# 微信数据实体
+
 class ExcelWechate(object):
+    """微信数据实体"""
     def __init__(self, rowInfo):
         self.istitle = False
         self.orderno = rowInfo[0].replace('`','').strip()
@@ -443,23 +452,26 @@ class ExcelWechate(object):
     def __str__(self):
         return '微信流水号：{}，订单号：{}'.format(self.orderno,self.payno)
 
-# 可对比实体
+
 class DataDetail(object):
-      def __init__(self):
-          self.orderno = ''
-          self.payno = ''
-          self.paytime = ''
-          self.payamount = ''
-          self.refundtime = ''
-          self.refundamount = ''
-          self.status = ''
-          pass
+    """可对比实体"""
 
-      def __str__(self):
-          return '交易流水号：{},订单号：{}'.format(self.orderno,self.payno)
+    def __init__(self):
+        self.orderno = ''
+        self.payno = ''
+        self.paytime = ''
+        self.payamount = ''
+        self.refundtime = ''
+        self.refundamount = ''
+        self.status = ''
+        pass
 
-# 结果实体
+    def __str__(self):
+        return '交易流水号：{},订单号：{}'.format(self.orderno,self.payno)
+
+
 class DataResult(object):
+    """结果实体"""
     def __init__(self):
         self.orderno=''
         self.payno=''

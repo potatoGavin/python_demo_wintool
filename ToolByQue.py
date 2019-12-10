@@ -6,6 +6,10 @@ from tkinter import ttk
 import threading
 from queue import Queue
 
+import base64
+import icon
+
+
 import run_pay_paysys
 import run_pay_offline
 import run_mapp_offline
@@ -30,6 +34,13 @@ def func_nopass():
     tkinter.messagebox.showinfo(title='抱歉', message='当前功能未开放,实在抱歉^-^')
     pass
 
+
+def img2base():
+    icondata = base64.b64decode('docom.ico')
+    tempFile="icon.ic"
+    iconfile=open(tempFile,"wb")
+
+    pass
 
 class App(tk.Tk):
     """
@@ -192,13 +203,13 @@ class ThreadedClient(threading.Thread):
         module=self.compare_module['identify']
 
         if module=='pay_paysys':   # 支付 --> 线上和第三方系统
-            self.module_func=run_pay_paysys.runCompare
+            self.module_func=run_pay_paysys.run_compare
             pass
         elif module=='pay_offsys':  # 支付--> 线上和线下
-            self.module_func = run_pay_offline.runCompare
+            self.module_func = run_pay_offline.run_compare
             pass
         elif module=='mini_wechate':  # 小程序--> 线上和微信
-            self.module_func = run_pay_paysys.runCompare
+            self.module_func = run_pay_paysys.run_compare
             pass
         elif module=='mini_offsys':  # 小程序--> 线上和线下系统
             self.module_func = run_mapp_offline.run_compare
@@ -207,7 +218,7 @@ class ThreadedClient(threading.Thread):
             self.module_func=func_nopass
             pass
         elif module=='ota_otasys':  # OTA--> 线上和OTA系统
-            self.module_func = run_ota_otasys.runCompare
+            self.module_func = run_ota_otasys.run_compare
             pass
         else:
             self.module_func = func_nopass
@@ -233,7 +244,12 @@ if __name__ == "__main__":
     """
     app = App()
     app.title("对账工具")        # 声明窗口的标题
+
+    tmp = open("docom.ico", "wb+")
+    tmp.write(base64.b64decode(icon.img))
+    tmp.close()
     app.iconbitmap('docom.ico')  # 改变窗口图标
+
 
     # 获取屏幕尺寸以计算布局参数，使窗口居屏幕中央
     width = 900

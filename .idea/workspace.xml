@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2166e1f7-ec48-431d-9d9b-9b685ed5263f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ToolByQue.py" beforeDir="false" afterPath="$PROJECT_DIR$/ToolByQue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/ToolByQue.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/ToolByQue.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_mapp_offline.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_mapp_offline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_ota_otasys.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_ota_otasys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_pay_offline.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_pay_offline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_pay_paysys.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_pay_paysys.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ToolByQue.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#308#628#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>list(filter(lambda k:k.status=='pay',result_temp))[0]</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dist/icon.py" />
+        <option value="$PROJECT_DIR$/icon.py" />
+        <option value="$PROJECT_DIR$/ToolByQue.py" />
+        <option value="$PROJECT_DIR$/run_pay_paysys.py" />
+        <option value="$PROJECT_DIR$/run_mapp_offline.py" />
+        <option value="$PROJECT_DIR$/run_ota_otasys.py" />
+        <option value="$PROJECT_DIR$/run_pay_offline.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/python_demo_wintool.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="435" />
+    <option name="y" value="126" />
+    <option name="width" value="1450" />
+    <option name="height" value="857" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="python_demo_wintool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_demo_wintool" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DayDayWork\Saas\demolist\python_demo_wintool" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ToolByQue" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_demo_wintool" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ToolByQue.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ToolByQue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2166e1f7-ec48-431d-9d9b-9b685ed5263f" name="Default Changelist" comment="" />
+      <created>1575603601426</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575603601426</updated>
+      <workItem from="1575603605599" duration="1590000" />
+      <workItem from="1575614540649" duration="461000" />
+      <workItem from="1575624576694" duration="471000" />
+      <workItem from="1575628136573" duration="575000" />
+      <workItem from="1575715296546" duration="823000" />
+      <workItem from="1575941377918" duration="2861000" />
+      <workItem from="1575958298894" duration="623000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7404000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="435" y="126" width="1450" height="857" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27482015" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3922652" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.25757575" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python_demo_wintool$ToolByQue.coverage" NAME="ToolByQue Coverage Results" MODIFIED="1575958314638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/icon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5725" selection-start-column="5725" selection-end-column="5725" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_pay_paysys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="281" column="33" selection-start-line="281" selection-start-column="33" selection-end-line="281" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#138#3155#0" />
+            <element signature="e#3219#3515#0" />
+            <element signature="e#3560#3774#0" />
+            <element signature="e#3822#3967#0" />
+            <element signature="e#4021#5455#0" />
+            <element signature="e#5511#8161#0" />
+            <element signature="e#8203#8804#0" />
+            <element signature="e#8850#9429#0" />
+            <element signature="e#9497#11837#0" />
+            <element signature="e#11913#12484#0" />
+            <element signature="e#12521#12877#0" />
+            <element signature="e#12914#13348#0" />
+            <element signature="e#13400#14018#0" />
+            <element signature="e#14063#14389#0" />
+            <element signature="e#14430#14931#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_mapp_offline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="362" column="8" selection-start-line="362" selection-start-column="8" selection-end-line="362" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#6575#10520#0" />
+            <element signature="e#10593#11542#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_ota_otasys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="256" column="8" selection-start-line="256" selection-start-column="8" selection-end-line="256" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#144#2254#0" />
+            <element signature="e#2607#4851#0" />
+            <element signature="e#5145#7035#0" />
+            <element signature="e#7103#7497#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_pay_offline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="243" column="27" lean-forward="true" selection-start-line="243" selection-start-column="27" selection-end-line="243" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#2614#4855#0" />
+            <element signature="e#5149#6974#0" />
+            <element signature="e#7047#7468#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToolByQue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#308#628#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -5,7 +5,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 # 执行主方法
-def runCompare(file_path,queue):
+def run_compare(file_path,queue):
     queue.put('开始读取excel文件...')
 
     try:
@@ -240,9 +240,9 @@ def formate_time(value):
         if not value:
             return ''
         t_year = value[0:4]
-        t_month = value[5:2]
-        t_day = value[8:2]
-        return '{}-{}-{}'.format(t_year, t_month, t_day, )
+        t_month = value[5:7]
+        t_day = value[8:10]
+        return '{}-{}-{}'.format(t_year, t_month, t_day)
         pass
     except:
         return ''
